@@ -1,0 +1,11 @@
+[project]
+name = "gcp-adk-intro-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-adk[a2a]==1.14.1",
+    "google-cloud-compute==1.37.0",
+    "google-cloud-monitoring==2.27.2",
+]
