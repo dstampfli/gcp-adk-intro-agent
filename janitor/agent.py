@@ -13,6 +13,8 @@ resource_scanner_agent = Agent(
     Return *all* resources.
     """,
     tools=[tools.get_compute_instances_list],
+    output_schema=schemas.VMInstanceList,
+    output_key="resources",
 )
 
 # The root_agent is the entry point for the user query.
