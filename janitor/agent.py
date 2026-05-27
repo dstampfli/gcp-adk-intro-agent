@@ -1,5 +1,9 @@
 from google.adk import Agent
 from google.adk.agents import SequentialAgent
+from google.adk.agents.remote_a2a_agent import (
+    AGENT_CARD_WELL_KNOWN_PATH,
+    RemoteA2aAgent,
+)
 from google.adk.tools.mcp_tool import McpToolset
 from google.adk.tools.mcp_tool.mcp_session_manager import StreamableHTTPConnectionParams
 
@@ -81,12 +85,23 @@ resource_labeler_agent = Agent(
 )
 
 
+resource_cleaner_agent = RemoteA2aAgent(
+    name="resource_cleaner_agent",
+    description=(
+        "Remote A2A agent that stops idle VMs whose janitor-scheduled "
+        "label date is in the past."
+    ),
+    agent_card=f"{settings.A2A_AGENT_BASE_URL}{AGENT_CARD_WELL_KNOWN_PATH}",
+)
+
+
 orchestrator_agent = SequentialAgent(
     name="orchestrator_agent",
     sub_agents=[
         resource_scanner_agent,
         resource_monitor_agent,
         resource_labeler_agent,
+        resource_cleaner_agent,
     ],
 )
 
