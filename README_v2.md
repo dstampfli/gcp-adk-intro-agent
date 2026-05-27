@@ -39,6 +39,9 @@ This hack will help you explore the following tasks:
 > - **Part 1 (onsite, ~2 hours):** Challenges 1-3 cover ADK fundamentals — setup, tools, and session state.
 > - **Part 2 (remote, ~3 hours):** Challenges 4-6 cover advanced topics — multi-agent orchestration, MCP, and A2A protocols.
 
+> [!TIP]
+> **Spoiler warning.** If you get stuck or want to compare approaches after finishing, see [SOLUTION.md](./SOLUTION.md) for an end-to-end walkthrough of all six challenges, including the final code per step and the gotchas worth knowing.
+
 ## Prerequisites
 
 - Basic knowledge of Python
